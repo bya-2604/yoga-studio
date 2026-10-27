@@ -1,0 +1,380 @@
+
+/* 1. Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background: #fffdf8;
+  --surface: #f1f3eb;
+  --text: #293a32;
+  --muted: #59675e;
+  --accent: #b96f57;
+  --accent-hover: #99533e;
+  --border: #dce2d8;
+  --radius: 1.25rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.2s, color 0.2s;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 0.2rem solid var(--accent);
+  outline-offset: 0.2rem;
+}
+
+/* 2. Header */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 5%;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a,
+.site-footer a {
+  color: var(--muted);
+}
+
+nav a:hover,
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+.theme-toggle {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* 3. Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 4rem 6%;
+  background: var(--surface);
+}
+
+.hero-content {
+  max-width: 38rem;
+}
+
+.eyebrow {
+  margin-bottom: 0.75rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  max-width: 12ch;
+  margin-bottom: 1rem;
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  letter-spacing: -0.05em;
+}
+
+.hero-content > p:not(.eyebrow) {
+  max-width: 34rem;
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+}
+
+.button {
+  display: inline-block;
+  padding: 0.9rem 1.25rem;
+  border: 0;
+  border-radius: 0.9rem;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--accent-hover);
+}
+
+.hero-art {
+  display: grid;
+  min-height: 13rem;
+  place-content: center;
+  border-radius: 45% 45% var(--radius) var(--radius);
+  background: #e4bdae;
+  color: #293a32;
+  text-align: center;
+}
+
+.hero-art span {
+  font-size: 4rem;
+}
+
+.hero-art p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* 4. Sections and practice cards */
+.section {
+  padding: 3.5rem 6%;
+}
+
+.section h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.practice-card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--background);
+}
+
+.practice-icon {
+  display: grid;
+  width: 3.5rem;
+  aspect-ratio: 1;
+  margin-bottom: 1rem;
+  place-items: center;
+  border-radius: 1rem;
+  background: var(--surface);
+  font-size: 1.75rem;
+}
+
+.practice-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+}
+
+.practice-card p {
+  color: var(--muted);
+}
+
+.practice-card .details {
+  margin-top: 1rem;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.schedule,
+.about {
+  background: var(--surface);
+}
+
+.schedule p,
+.prices p,
+.about p {
+  margin-bottom: 0.6rem;
+  color: var(--muted);
+}
+
+/* 5. Booking form */
+.booking {
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+.booking form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.booking label {
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+.booking input,
+.booking select {
+  width: 100%;
+  min-width: 0;
+  padding: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--background);
+  color: var(--text);
+}
+
+.booking input:focus,
+.booking select:focus {
+  border-color: var(--accent);
+}
+
+.booking input:invalid:not(:placeholder-shown) {
+  border-color: #b42318;
+}
+
+.booking input:valid {
+  border-color: #4f7b58;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* 6. Footer */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 6%;
+  border-top: 1px solid var(--border);
+}
+
+.site-footer div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* 7. Dark theme */
+body.dark-mode {
+  --background: #202c27;
+  --surface: #2b3932;
+  --text: #f5f4ed;
+  --muted: #d0d9d1;
+  --accent: #e4bdae;
+  --accent-hover: #f0d0c3;
+  --border: #46554c;
+}
+
+body.dark-mode .button {
+  color: #202c27;
+}
+
+body.dark-mode .hero-art {
+  background: #d5ad9e;
+}
+
+/* 8. Tablet and desktop */
+@media (min-width: 600px) {
+  .hero {
+    grid-template-columns: 1.3fr 0.7fr;
+    padding-block: 5rem;
+  }
+
+  .practice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-art {
+    min-height: 20rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header {
+    padding-inline: 7%;
+  }
+
+  .hero,
+  .section {
+    padding-inline: 10%;
+  }
+
+  .practice-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero {
+    min-height: 32rem;
+  }
+
+  .site-footer {
+    padding-inline: 10%;
+  }
+}
+
+/* 9. Small phones */
+@media (max-width: 480px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1rem 5%;
+  }
+
+  nav {
+    gap: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .hero,
+  .section {
+    padding: 2.5rem 5%;
+  }
+
+  .hero-art {
+    min-height: 10rem;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+}
